@@ -12,7 +12,7 @@ YOUTUBE_VIDEO_URL = 'https://www.youtube.com/post/{youtube_id}'
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
 
 SORT_BY_POPULAR = 0
-SORT_BY_RECENT = 1
+SORT_BY_RECENT = 'true'
 
 YT_CFG_RE = r'ytcfg\.set\s*\(\s*({.+?})\s*\)\s*;'
 YT_INITIAL_DATA_RE = r'(?:window\s*\[\s*["\']ytInitialData["\']\s*\]|ytInitialData)\s*=\s*({.+?})\s*;\s*(?:var\s+meta|</script|\n)'
