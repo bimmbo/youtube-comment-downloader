@@ -5,7 +5,7 @@ import os
 import sys
 import time
 
-from .downloader import YoutubeCommentDownloader, SORT_BY_POPULAR, SORT_BY_RECENT
+from .downloader import YoutubeCommentDownloader, #SORT_BY_POPULAR, SORT_BY_RECENT
 
 INDENT = 4
 
@@ -27,8 +27,8 @@ def main(argv = None):
     parser.add_argument('--pretty', '-p', action='store_true', help='Change the output format to indented JSON')
     parser.add_argument('--limit', '-l', type=int, help='Limit the number of comments')
     parser.add_argument('--language', '-a', type=str, default=None, help='Language for Youtube generated text (e.g. en)')
-    parser.add_argument('--sort', '-s', type=int, default=SORT_BY_RECENT,
-                        help='Whether to download popular (0) or recent comments (1). Defaults to 1')
+#    parser.add_argument('--sort', '-s', type=int, default=SORT_BY_RECENT,
+#                        help='Whether to download popular (0) or recent comments (1). Defaults to 1')
 
     try:
         args = parser.parse_args() if argv is None else parser.parse_args(argv)
@@ -51,9 +51,9 @@ def main(argv = None):
         print('Downloading Youtube comments for', youtube_id or youtube_url)
         downloader = YoutubeCommentDownloader()
         generator = (
-            downloader.get_comments(youtube_id, args.sort, args.language)
+            downloader.get_comments(youtube_id, args.language)
             if youtube_id
-            else downloader.get_comments_from_url(youtube_url, args.sort, args.language)
+            else downloader.get_comments_from_url(youtube_url, args.language)
         )
 
         count = 1
